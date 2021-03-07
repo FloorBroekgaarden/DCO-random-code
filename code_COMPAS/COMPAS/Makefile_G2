@@ -1,0 +1,24 @@
+#Use GNU C++ compiler
+CPP = g++
+       
+CFLAGS =  -I.
+FCFLAGS = 
+ICFLAGS = -I$(BOOST_DIR)/include -I$(GSL_DIR)/include  -I./SSE -std=c++11
+LFLAGS =  -L$(BOOST_DIR)/lib -L$(GSL_DIR)/lib  -lgsl -lgslcblas -lm -march=k8 -lboost_filesystem -lboost_program_options -lboost_system
+SOURCES = $(shell echo *.cpp)
+OBJI = $(SOURCES:.cpp=.o) 
+
+all: COMPAS
+	@echo $(OBJI)
+
+.cpp.o:
+	$(CPP) -c -g $(CFLAGS) $(FCFLAGS) $(ICFLAGS) $?
+
+COMPAS: $(OBJI)
+	@echo $(SOURCES)
+	@echo $(OBJI)
+	$(CPP) -o COMPAS $(OBJI) $(ICFLAGS) $(LFLAGS)
+
+clean:  
+	rm -f *.o
+

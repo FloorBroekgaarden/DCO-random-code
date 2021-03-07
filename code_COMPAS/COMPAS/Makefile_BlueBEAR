@@ -1,0 +1,31 @@
+#Use GNU C++ compiler
+CPP = g++
+        
+BOOST = /gpfs/bb/jxb944/libraries/boost_1_62_0
+BOOSTINSTALL = /gpfs/bb/jxb944/libraries/boostInstall
+GSL = /gpfs/bb/jxb944/libraries/gslInstall
+CFLAGS =  -I. 
+ICFLAGS = -I/opt/local/include/ -I$(BOOST) -I$(BOOSTINSTALL)/include/boost -I$(BOOSTINSTALL) -I./SSE -std=c++11
+LFLAGS = -L/opt/local/lib -L$(GSL)/lib -L$(BOOSTINSTALL)/lib -lgsl -lgslcblas -lm -march=k8 -lboost_filesystem -lboost_program_options -lboost_system -std=c++11
+
+SOURCES = $(shell echo *.cpp)
+#SOURCES = $(wildcard *.cpp)
+OBJI = $(SOURCES:.cpp=.o) 
+
+all: Binaries
+	@echo $(OBJI)
+
+.cpp.o:
+	$(CPP) -c -g $(CFLAGS) $(FCFLAGS) $(ICFLAGS) $?
+
+#Star.o:
+#	$(CPP) -c -g $(CFLAGS) $(FCFLAGS) $(ICFLAGS) SSE/Star.cpp        
+
+Binaries: $(OBJI)
+	@echo $(SOURCES)
+	@echo $(OBJI)
+	$(CPP) -o COMPAS $(OBJI) $(ICFLAGS) $(LFLAGS)	
+
+clean:  
+	rm -f *.o
+

@@ -1,14 +1,17 @@
-# Object file
-*.o
-
-*.pptx
-
-*.log
-
-# Ada Library Information
-*.h5
-*.hdf5
-# Data files 
 *.csv
-
-*BBH_TrianglePlot_scatter_maskGW190412_A.0.0.0_bigPlot.pdf
+*.hdf5
+*.pdf
+*.bbl
+*.pdf
+*.h5
+*.h 
+*.o
+*.pyc 
+*.gz
+*.aux
+*.log
+*.out 
+*.mp4
+*.gif
+3_FormationChannelsAsAFunctionOfMetallicity.ipynb
+*.avi

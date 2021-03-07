@@ -1,0 +1,30 @@
+#Use GNU C++ compiler
+CPP = g++
+        
+BOOST = /home/jbarrett/compas/lib/boost_1_61_0
+BOOSTINSTALL = /home/jbarrett/compas/lib/boostInstall
+GSL = /home/jbarrett/compas/lib/gslInstall
+CFLAGS =  -I. 
+ICFLAGS = -I/opt/local/include/ -I$(BOOST) -I$(BOOSTINSTALL)/include/boost -I$(BOOSTINSTALL) -I./SSE -std=c++11
+LFLAGS = -L/opt/local/lib -L$(GSL)/lib -L$(BOOSTINSTALL)/lib -lgsl -lgslcblas -lm -march=k8 -lboost_filesystem -lboost_program_options -lboost_system -std=c++11
+SOURCES = $(shell echo *.cpp)
+#SOURCES = $(wildcard *.cpp)
+OBJI = $(SOURCES:.cpp=.o) 
+
+all: Binaries
+	@echo $(OBJI)
+
+.cpp.o:
+	$(CPP) -c -g $(CFLAGS) $(FCFLAGS) $(ICFLAGS) $?
+
+#Star.o:
+#	$(CPP) -c -g $(CFLAGS) $(FCFLAGS) $(ICFLAGS) SSE/Star.cpp        
+
+Binaries: $(OBJI)
+	@echo $(SOURCES)
+	@echo $(OBJI)
+	$(CPP) -o COMPAS $(OBJI) $(ICFLAGS) $(LFLAGS)	
+
+clean:  
+	rm -f *.o
+

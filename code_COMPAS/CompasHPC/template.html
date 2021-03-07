@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ title }}</title>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<h1 id="top">{{ pagetitle }}</h1>
+
+<h2>Program Options</h2>
+<p>{{ programOptions }}</p>
+
+<h2>Summary</h2>
+<table style="width:100%">
+{% for col1_val, col2_val, col3_val, col4_val, col5_val in summaryTable %}
+  <tr>
+    <td>{{ col1_val }}</td>
+    <td>{{ col2_val }}</td>
+    <td>{{ col3_val }}</td>
+    <td>{{ col4_val }}</td>
+    <td>{{ col5_val }}</td>
+  </tr>
+{% endfor %}
+</table>
+
+<h2>Exclusions</h2>
+<div>
+{% if Hubble == 'True' %}
+<p>Binaries merging in over a Hubble time have been excluded</p>
+{% endif %}
+{% if Hubble == 'False' %}
+<p>Binaries merging in over a Hubble time have been included</p>
+{% endif %}
+
+{% if RLOF == 'True' %}
+<p>Binaries whose secondary star undergoes RLOF immediately after a CEE have been exlcuded.</p>
+{% endif %}
+{% if RLOF == 'False' %}
+<p>Binaries whose secondary star undergoes RLOF immediately after a CEE have been included.</p>
+{% endif %}
+
+{% if Pessimistic == 'True' %}
+<p>Binaries which use the optimistic CE prescription have been exlcuded.</p>
+{% endif %}
+{% if Pessimistic == 'False' %}
+<p>Binaries which use the optimistic CE prescription have been included.</p>
+{% endif %}
+</div>
+
+
+
+<h2>Contents</h2>
+<ol type="1">
+  {% for title, description, imagepath, number in webpage_figures %}
+  <a href="#{{ title }}"><li>{{ title }}</li></a>
+  {% endfor %}
+</ol>
+
+{% for title, description, imagepath, number in webpage_figures %}
+<h3 id="{{ title }}">{{ number }}. {{ title }}</h3>
+<img src={{ imagepath }}>
+<h4>{{ description }}</h4>
+<a href="#top">Top</a>
+{% endfor %}
+
+</body>
+</html>

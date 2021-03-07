@@ -1,0 +1,28 @@
+#Use GNU C++ compiler
+CPP = g++
+       
+CFLAGS =  -I.
+FCFLAGS = 
+ICFLAGS = -I/opt/local/include/ -I/home/simons/binaries_sdk/boost_1_60_install/include -I/opt/local/include/boost/ -I/home/simons/binaries_sdk/boost_1_60_install -I/home/simons/binaries_sdk/gsl-2.1_install  -I./SSE -std=c++11
+LFLAGS =  -L/opt/local/lib -L/home/simons/binaries_sdk/boost_1_60_install/lib -L/home/simons/binaries_sdk/gsl-2.1_install/lib  -lgsl -lgslcblas -lm -march=k8 -lboost_filesystem -lboost_program_options -lboost_system -std=c++11
+SOURCES = $(shell echo *.cpp)
+#SOURCES = $(wildcard *.cpp)
+OBJI = $(SOURCES:.cpp=.o) 
+
+all: COMPAS
+	@echo $(OBJI)
+
+.cpp.o:
+	$(CPP) -c -g $(CFLAGS) $(FCFLAGS) $(ICFLAGS) $?
+
+#Star.o:
+#	$(CPP) -c -g $(CFLAGS) $(FCFLAGS) $(ICFLAGS) SSE/Star.cpp        
+
+COMPAS: $(OBJI)
+	@echo $(SOURCES)
+	@echo $(OBJI)
+	$(CPP) -o COMPAS $(OBJI) $(ICFLAGS) $(LFLAGS)
+
+clean:  
+	rm -f *.o
+

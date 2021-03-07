@@ -1,0 +1,7 @@
+executable=/home/floorb/DATA/black_hole-neutron_star/Fiducial/Z_0.001/masterFolder/AISpostProcessing.bash
+getenv=True
+universe=vanilla
+log=/home/floorb/DATA/black_hole-neutron_star/Fiducial/Z_0.001/masterFolder/AISpostProcessing-log.txt
+error=/home/floorb/DATA/black_hole-neutron_star/Fiducial/Z_0.001/masterFolder/AISpostProcessing-error.txt
+output=/home/floorb/DATA/black_hole-neutron_star/Fiducial/Z_0.001/masterFolder/AISpostProcessing-output.txt
+queue

@@ -1,0 +1,10 @@
+/home/floorb/DATA/black_hole-neutron_star/Fiducial/Z_0.001/masterFolder/ImportanceSampling-postProcessing.py:333: RuntimeWarning: invalid value encountered in power
+  radius_coefficient_lamda * np.power(MZAMS,(19.0)) +\
+/home/floorb/DATA/black_hole-neutron_star/Fiducial/Z_0.001/masterFolder/ImportanceSampling-postProcessing.py:334: RuntimeWarning: invalid value encountered in power
+  radius_coefficient_mu * np.power(MZAMS,(19.5))
+/home/floorb/DATA/black_hole-neutron_star/Fiducial/Z_0.001/masterFolder/ImportanceSampling-postProcessing.py:336: RuntimeWarning: invalid value encountered in power
+  bottom  = radius_coefficient_nu + radius_coefficient_xi * np.power(MZAMS,(2.0)) + radius_coefficient_omicron * np.power(MZAMS,(8.5)) + np.power(MZAMS,(18.5)) + radius_coefficient_Pi * np.power(MZAMS,(19.5))
+/home/floorb/DATA/black_hole-neutron_star/Fiducial/Z_0.001/masterFolder/ImportanceSampling-postProcessing.py:368: RuntimeWarning: invalid value encountered in power
+  bottom = 0.6 + np.power(q, -2.0/3.0) * np.log(1.0 + np.power(q, 1.0/3.0))
+/home/floorb/DATA/black_hole-neutron_star/Fiducial/Z_0.001/masterFolder/ImportanceSampling-postProcessing.py:492: RuntimeWarning: invalid value encountered in greater
+  maskRLOFonZAMS = (rocheLobeTracker1 > 1.0) |  (rocheLobeTracker2 > 1.0)

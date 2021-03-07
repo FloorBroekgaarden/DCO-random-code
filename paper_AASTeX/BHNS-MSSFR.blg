@@ -1,0 +1,72 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: BHNS-MSSFR.aux
+The style file: aasjournal.bst
+Reallocated field_info (elt_size=4) to 15192 items from 5000.
+Database file #1: my_bib.bib
+Repeated entry---line 3306 of file my_bib.bib
+ : @article{2017MNRAS.465.2092P
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4991 of file my_bib.bib
+ : @article{1972AcA....22...73P
+ :                             ,
+I'm skipping whatever remains of this entry
+Reallocated str_pool (elt_size=1) to 130000 items from 65000.
+Repeated entry---line 6928 of file my_bib.bib
+ : @article{2015ApJ...807L..24L
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 9698 of file my_bib.bib
+ : @article{2015MNRAS.450L..85M
+ :                             ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Woosley2002TheStars"
+Warning--I didn't find a database entry for "Woosley2019TheLoss"
+Warning--I didn't find a database entry for "("
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--can't use both author and editor fields in 2001ASPC..229..255D
+Warning--empty publisher in 2001ASPC..229..255D
+Warning--empty publisher in 2006csxs.book..623T
+You've used 361 entries,
+            3168 wiz_defined-function locations,
+            3345 strings with 121052 characters,
+and the built_in function-call counts, 190237 in all, are:
+= -- 14734
+> -- 16471
+< -- 139
++ -- 5527
+- -- 5908
+* -- 18172
+:= -- 35075
+add.period$ -- 400
+call.type$ -- 361
+change.case$ -- 2173
+chr.to.int$ -- 350
+cite$ -- 364
+duplicate$ -- 6169
+empty$ -- 10470
+format.name$ -- 6405
+if$ -- 37992
+int.to.chr$ -- 12
+int.to.str$ -- 0
+missing$ -- 352
+newline$ -- 1131
+num.names$ -- 1448
+pop$ -- 2410
+preamble$ -- 2
+purify$ -- 2173
+quote$ -- 0
+skip$ -- 5560
+stack$ -- 0
+substring$ -- 7712
+swap$ -- 125
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 3243
+warning$ -- 3
+while$ -- 1397
+width$ -- 0
+write$ -- 3950
+(There were 4 error messages)

@@ -1,0 +1,10 @@
+notify_user=fsbroekgaarden@gmail.com
+notification=Always
+executable=$(directory)/compasHPC.py
+getenv=True
+universe=vanilla
+log=$(directory)/log.txt
+error=$(directory)/error.txt
+output=$(directory)/output.txt
+request_cpus = 2
+queue

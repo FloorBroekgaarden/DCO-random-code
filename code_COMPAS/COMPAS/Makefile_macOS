@@ -1,0 +1,42 @@
+#Use GNU C++ compiler
+CPP = g++
+        
+BOOST = /opt/local
+CFLAGS =  -I.
+FCFLAGS = 
+ICFLAGS = -I$(BOOST)/include -I./SSE -std=c++11
+LFLAGS =  -L$(BOOST)/lib -lgsl -lgslcblas -lm -lz -ldl -march=k8 -lboost_filesystem-mt -lboost_program_options-mt -lboost_system-mt -std=c++11
+SOURCES = $(shell echo *.cpp)
+
+OBJI = $(SOURCES:.cpp=.o) 
+
+all: COMPAS
+	@echo $(OBJI)
+
+.cpp.o:
+	$(CPP) -c -g $(CFLAGS) $(FCFLAGS) $(ICFLAGS) $?
+      
+
+COMPAS: $(OBJI)
+	@echo $(SOURCES)
+	@echo $(OBJI)
+	$(CPP) -o COMPAS $(OBJI) $(ICFLAGS) $(LFLAGS)
+
+clean:  
+	rm -f *.o unitTests/*.o
+	
+tests: COMPAS
+	$(CPP) -c unitTests/mainTests.cpp -o unitTests/mainTests.o $(LFLAGS)
+	ls *.o | grep -v main.o | xargs ld -r -o unitTests/COMPAS.o
+	$(CPP) unitTests/mainTests.o unitTests/COMPAS.o -o runTests $(LFLAGS)
+
+static: COMPAS_STATIC
+	@echo $OBJI
+
+COMPAS_STATIC: $(OBJI)
+	@echo $(SOURCES)
+	@echo $(OBJI)
+	$(CPP) -o COMPAS $(OBJI) $(ICFLAGS) $(LFLAGS) -static
+
+
+

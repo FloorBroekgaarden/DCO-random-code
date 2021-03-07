@@ -1,0 +1,6 @@
+-------------------------------------------------
+  Started creating the gaussians 
+
+ 
+ The file STROOPWAFELgaussians.txt has been created. Step 2 of AIS for COMPAS is completed!
+-------------------------------------------------
